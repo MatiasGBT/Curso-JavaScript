@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cambio de valor de atributos en JavaScript</title>
+</head>
+<body>
+    <h1>Cambio de valor de atributos</h1>
+    <button onclick="mostrar()">Mostrar</button>
+    <br/>
+    <img id="imagen" src="http://globalmentoring.com.mx/imagenes/javascript.png">
+    
+    <script>
+        function mostrar() {
+            let texto = "http://globalmentoring.com.mx/imagenes/";
+            let js = "javascript.png";
+            let html = "html5.png";
+            if (document.getElementById("imagen").src == texto + js) {
+                document.getElementById("imagen").src = texto + html;
+            } else {
+                document.getElementById("imagen").src = texto + js;
+            }
+        }
+    </script>
+</body>
+</html>

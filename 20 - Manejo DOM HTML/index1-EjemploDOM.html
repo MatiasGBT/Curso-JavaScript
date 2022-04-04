@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo DOM con JavaScript</title>
+    <style>
+        .azul {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="cabecero" class="azul">Ejemplo DOM con JavaScript</h1>
+    <p id="parrafo1" class="azul">¡Saludos!</p>
+    <p id="parrafo2" class="azul">Otro párrafo</p>
+
+    <script>
+        //Con innerHTML recuperamos el texto de la etiquera HTML seleccionada
+        //en este caso es "Ejemplo DOM con JavaScript"
+        let cabecero = document.getElementById("cabecero");
+        console.log("Cabecero: " + cabecero.innerHTML);
+        let parrafo = document.getElementById("parrafo1");
+        //innerHTML también sirve para cambiar el texto de la etiqueta HTML
+        parrafo.innerHTML = "Nuevo valor del párrafo";
+
+        //Obtener todas las etiquetas con x nombre
+        console.log("--- Elementos obtenidos por su etiqueta ---");
+        let parrafos = document.getElementsByTagName("p"); //Esto puede devolver un array de elementos
+        console.log("Cantidad de párrafos: " + parrafos.length);
+        for (let i = 0; i<parrafos.length; i++) {
+            console.log("i:" + i + " " + parrafos[i].innerHTML);
+        }
+
+        //Obtener por clase
+        console.log("--- Elementos obtenidos por una clase ---");
+        let elementos = document.getElementsByClassName("azul"); //Esto puede devolver un array de elementos
+        console.log("Cantidad de elementos: " + elementos.length);
+        for (let elemento of elementos) {
+            console.log(elemento.innerHTML);
+        }
+
+        //Obtener por elemento y clase
+        console.log("--- Elementos con una clase específica ---");
+        let parrafos2 = document.querySelectorAll("p.azul"); //Esto puede devolver un array de elementos
+        console.log("Cantidad de párrafos: " + parrafos2.length);
+        for (let parrafo of parrafos2) {
+            console.log(parrafo.innerHTML);
+        }
+    </script>
+</body>
+</html>
