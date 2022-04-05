@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Manejo de eventos con JavaScript</title>
+</head>
+
+<body>
+    <h1 id="titulo">Manejo de Eventos</h1>
+    <br />
+
+    <!--Si tenemos los input dentro de un formulario, podemos asociar todos los eventos a este
+    y reducir código-->
+    <form id="formulario">
+        Nombre: <input type="text" id="nombre">
+        <br />
+        Apellido: <input type="text" id="apellido">
+    </form>
+
+    <script>
+        const formulario = document.getElementById("formulario");
+
+        formulario.addEventListener("focus", (evento) => {
+            let componente = evento.target;
+            componente.style.background = "pink";
+        }, true); //Al agregar true indicamos que lo que configuramos para el formulario se aplique para los elementos internos
+        formulario.addEventListener("blur", (evento) => {
+            let componente = evento.target;
+            componente.style.background = "";
+        }, true);
+
+        //Este tercer parametro se conoce como Delegación de evento o "use capture", este permite propagar la información ya configurada
+        //en el elemento más externo a los elementos más internos (en este caso, los inputs). El valor por default es false.
+    </script>
+</body>
+
+</html>

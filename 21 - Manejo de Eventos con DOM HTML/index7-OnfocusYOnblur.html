@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manejo de eventos con JavaScript</title>
+</head>
+<body>
+    <!--onfocus: al hacerle click a un input cambia su background
+    onblur: regresa el fondo de un input a blanco-->
+    <h1 id="titulo">Manejo de Eventos</h1>
+    <br/>
+    Nombre: <input type="text" onfocus="cambiar(this)" onblur="regresar(this)">
+    <br/>
+    Apellido: <input type="text" onfocus="cambiar(this)" onblur="regresar(this)">
+    <script>
+        function cambiar(input) {
+            input.style.background = "yellow";
+        }
+        function regresar(input) {
+            input.style.background = "white";
+        }
+    </script>
+</body>
+</html>

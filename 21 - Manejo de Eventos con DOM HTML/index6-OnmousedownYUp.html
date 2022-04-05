@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manejo de eventos con JavaScript</title>
+</head>
+<body>
+    <!--onmousedown: hacemos click en un elemento
+    onmouseup: soltamos el click-->
+    <h1 id="titulo" onmousedown="rojo(this)" onmouseup="azul(this)">
+        Manejo de Eventos
+    </h1>
+    <br/>
+    <script>
+        function rojo(titulo) {
+            titulo.style.color = "red";
+        }
+        function azul(titulo) {
+            titulo.style.color = "blue";
+        }
+    </script>
+</body>
+</html>

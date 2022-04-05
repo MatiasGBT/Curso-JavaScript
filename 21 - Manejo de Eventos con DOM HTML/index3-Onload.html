@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manejo de eventos con JavaScript</title>
+</head>
+<body onload="entrar()">
+    <!--onload se inicia cuando carga nuestra página web-->
+    <h1 id="titulo">Manejo de Eventos</h1>
+    <br/>
+    <div id="mostrar"></div>
+    <script>
+        function entrar() {
+            alert("Entrando a la página web");
+            let texto = "";
+            //navigator es un objeto ya definido en JavaScript,
+            //sirve para preguntarle cosas al navegador
+            if (navigator.cookieEnabled) {
+                texto = "Las cookies están habilitadas";
+            } else {
+                texto = "Las cookies están habilitadas";
+            }
+            document.getElementById("mostrar").innerHTML = texto;
+        }
+    </script>
+
+    <!--onload puede servir para revisar el idioma del usuario o ver
+    si tiene habilitado las cookies-->
+
+</body>
+</html>

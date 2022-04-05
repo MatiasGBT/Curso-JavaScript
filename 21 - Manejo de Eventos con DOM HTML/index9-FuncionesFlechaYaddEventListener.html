@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manejo de eventos con JavaScript</title>
+</head>
+<body>
+    <h1 id="titulo">Manejo de Eventos</h1>
+    <br/>
+    Nombre: <input type="text" id="nombre">
+    <br/>
+    Apellido: <input type="text" id="apellido">
+    <script>
+        //Lo malo de las funciones flecha es que no permiten reutilizar el código
+        document.getElementById("nombre").addEventListener("focus", (evento)=>{
+            let componente = evento.target;
+            componente.style.background = "pink";
+        });
+        document.getElementById("nombre").addEventListener("blur", (evento)=>{
+            let componente = evento.target;
+            componente.style.background = ""; //Si lo dejamos vacío es blanco por defecto
+        });
+
+        document.getElementById("apellido").addEventListener("focus", cambiar);
+        document.getElementById("apellido").addEventListener("blur", regresar);
+        
+        function cambiar(evento) {
+            let componente = evento.target;
+            componente.style.background = "yellow";
+        }
+
+        function regresar(evento) {
+            let componente = evento.target;
+            componente.style.background = "white";
+        }
+    </script>
+</body>
+</html>

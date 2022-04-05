@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manejo de eventos con JavaScript</title>
+</head>
+<body>
+    <!--Este evento lo usaremos principalmente al modificar los elementos de un campo de texto-->
+    <h1 id="titulo">Manejo de Eventos</h1>
+    <br/>
+    Nombre: <input type="text" id="nombre" onchange="convertir()">
+    <script>
+        function convertir() {
+            //Esto se puede hacer con this también
+            let nombre = document.getElementById("nombre");
+            nombre.value = nombre.value.toUpperCase();
+        }
+    </script>
+</body>
+</html>

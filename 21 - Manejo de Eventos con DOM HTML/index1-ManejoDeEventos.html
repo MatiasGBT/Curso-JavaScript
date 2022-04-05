@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manejo de eventos con JavaScript</title>
+</head>
+<body>
+    <!--Hay muchos eventos, si ponemos la palabra on como atributo a una etiqueta
+    podemos verlos. Si manejamos los eventos desde HTML hay que poner la palabra "on" siempre-->
+    <!--<h1 onclick="this.innerHTML='Nuevo titulo'">Manejo de Eventos</h1>-->
+    <!--Esto no es una buena práctica, lo que hay que hacer es pasarlo como función-->
+
+    <!--Con el this nos ahorramos seleccionarla con un id y el método getElementById-->
+    <h1 onclick="cambiarTexto(this)">Manejo de Eventos</h1>
+
+    <br>
+    <script>
+        function cambiarTexto(elementoHTML) {
+            elementoHTML.innerHTML="Nuevo titulo";
+        }
+    </script>
+</body>
+</html>
